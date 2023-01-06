@@ -7,6 +7,11 @@
 
 import Foundation
 import Reachability
+import RxSwift
+import RxCocoa
+import RxRelay
+import RxOptional
+import NSObject_Rx
 
 open class TTNetObserver: NSObject {
     public enum State {
