@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
   TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/imbatao@outlook.com/TTAssistKit'
+  s.homepage         = 'https://github.com/imbaTao/TTAssistKit.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'imbatao@outlook.com' => 'imbatao@outlook.com' }
-  s.source           = { :git => 'https://github.com/imbatao@outlook.com/TTAssistKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/imbaTao/TTAssistKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
   s.source_files = 'TTAssisKit.swift'
 
