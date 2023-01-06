@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'TTAssistKit_Example' do
+  pod 'TTAssistKit', :path => '../'
+#  pod 'QMUIKit/QMUIComponents/QMUIModalPresentationViewController'
+
+  target 'TTAssistKit_Tests' do
+    inherit! :search_paths
+  end
+end
