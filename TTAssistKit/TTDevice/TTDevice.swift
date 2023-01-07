@@ -29,7 +29,7 @@ open class TTDevice: NSObject {
         //首次赋值
         orientationRelay.accept(UIApplication.shared.statusBarOrientation)
         
-        let name = NSNotification.Name.UIApplicationDidChangeStatusBarOrientation
+        let name = UIApplication.didChangeStatusBarOrientationNotification
     
         // 监听屏幕旋转完毕
         NotificationCenter.default.rx.notification(name).subscribe(onNext: { [weak self] (_) in guard let self = self else { return }
