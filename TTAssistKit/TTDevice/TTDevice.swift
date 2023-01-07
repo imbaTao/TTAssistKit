@@ -7,42 +7,13 @@
 
 import Foundation
 import UIKit
-import RxSwift
-import RxCocoa
-import RxRelay
-import RxOptional
-import NSObject_Rx
 
 open class TTDevice: NSObject {
     public static let shared = TTDevice()
 
-    let orientationRelay = BehaviorRelay<UIInterfaceOrientation>.init(value: .portrait)
-    var orientation: UIInterfaceOrientation {
-        return orientationRelay.value
-    }
-
-    var isPortrait: Bool {
-        var isPortrait = false
-        switch orientation {
-        case .portrait, .portraitUpsideDown:
-            isPortrait = true
-        default:
-            break
-        }
-        return isPortrait
-    }
+    // 方向旋转信号信号
+    public let orientationRelay = BehaviorRelay<UIInterfaceOrientation>.init(value: .portrait)
     
-    var isLand: Bool {
-        var isLand = false
-        switch orientation {
-        case .landscapeLeft, .landscapeRight:
-            isLand = true
-        default:
-            break
-        }
-        return isLand
-    }
-
     override init() {
         super.init()
 
@@ -69,8 +40,39 @@ open class TTDevice: NSObject {
     
     
     // 强制横向旋转
-    func forceRotateDevice(_ orientation: UIInterfaceOrientation) {
+    public func forceRotateDevice(_ orientation: UIInterfaceOrientation) {
         UIDevice.current.setValue(
             orientation.rawValue, forKey: "orientation")
     }
 }
+
+
+public extension TTDevice {
+    // 当前的方向
+    var orientation: UIInterfaceOrientation {
+        return orientationRelay.value
+    }
+
+    var isPortrait: Bool {
+        var isPortrait = false
+        switch orientation {
+        case .portrait, .portraitUpsideDown:
+            isPortrait = true
+        default:
+            break
+        }
+        return isPortrait
+    }
+    
+    var isLand: Bool {
+        var isLand = false
+        switch orientation {
+        case .landscapeLeft, .landscapeRight:
+            isLand = true
+        default:
+            break
+        }
+        return isLand
+    }
+}
+
