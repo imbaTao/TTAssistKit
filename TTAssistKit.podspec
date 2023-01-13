@@ -28,14 +28,18 @@ Pod::Spec.new do |s|
     s.source           = { :git => 'https://github.com/imbaTao/TTAssistKit.git', :tag => s.version.to_s }
     # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 #    s.source_files = 'TTAssisKit.swift'
+    s.swift_version = "5.0" 
+    s.ios.deployment_target = '11.0'
     
-    s.ios.deployment_target = '10.0'
+    
+    # third
     s.dependency 'RxSwift',"6.5.0"
     s.dependency 'RxCocoa',"6.5.0"
     s.dependency 'NSObject+Rx',"5.2.2"
     s.dependency 'RxOptional',"5.0.2"
     #  s.dependency 'RxGesture',"4.0.4"
     s.dependency 'RxRelay',"6.5.0"
+    
     
     s.subspec 'TTAssistCore' do |ttNetObserver|
         ttNetObserver.source_files = 'TTAssistKit/TTAssistCore/**/*'
