@@ -1,11 +1,6 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '11.0'
 target 'TTAssistKit_Example' do
   pod 'TTAssistKit', :path => '../'
-
-
-  target 'TTAssistKit_Tests' do
-    inherit! :search_paths
-  end
 end

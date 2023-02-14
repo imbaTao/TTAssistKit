@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
     s.name             = 'TTAssistKit'
-    s.version          = '1.0.2'
+    s.version          = '0.1.0'
     s.summary          = 'Assist-Kit'
     
     # This description is used to generate tags and improve search results.
@@ -31,7 +31,6 @@ Pod::Spec.new do |s|
     s.swift_version = "5.0" 
     s.ios.deployment_target = '11.0'
     
-    
     # third
     s.dependency 'RxSwift',"6.5.0"
     s.dependency 'RxCocoa',"6.5.0"
@@ -41,18 +40,24 @@ Pod::Spec.new do |s|
     s.dependency 'RxRelay',"6.5.0"
     
     
-    s.subspec 'TTAssistCore' do |ttNetObserver|
-        ttNetObserver.source_files = 'TTAssistKit/TTAssistCore/**/*'
+    s.subspec 'TTAssistCore' do |ss|
+      ss.source_files = 'TTAssistKit/TTAssistCore/**/*'
     end
     
-    s.subspec 'TTNetObserver' do |ttNetObserver|
-        ttNetObserver.source_files = 'TTAssistKit/TTNetObserver/**/*'
-        ttNetObserver.dependency 'ReachabilitySwift'
-        ttNetObserver.dependency 'TTAssistKit/TTAssistCore'
+    s.subspec 'TTAssistCore' do |ss|
+      ss.source_files = 'TTAssistCore/**/*'
+    end
+
+    s.subspec 'TTNetObserver' do |ss|
+      ss.source_files = 'TTAssistKit/TTNetObserver/**/*'
+      ss.dependency 'ReachabilitySwift'
+    end
+
+    s.subspec 'TTDevice' do |ss|
+      ss.source_files = 'TTAssistKit/TTDevice/**/*'
     end
     
-    s.subspec 'TTDevice' do |ttDevice|
-        ttDevice.source_files = 'TTAssistKit/TTDevice/**/*'
-        ttDevice.dependency 'TTAssistKit/TTAssistCore'
+    s.subspec 'TTAuthorizer' do |ss|
+      ss.source_files = 'TTAssistKit/TTAuthorizer/**/*'
     end
 end

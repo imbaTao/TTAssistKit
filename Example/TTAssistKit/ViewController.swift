@@ -13,9 +13,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//
+//        TTNetObserver.shared.netStateChange.subscribe(onNext: {[weak self] (hasNet) in guard let self = self else { return }
+//            print("是否有网\(hasNet)")
+//        }).disposed(by: rx.disposeBag)
         
-        TTNetObserver.shared.netStateChange.subscribe(onNext: {[weak self] (hasNet) in guard let self = self else { return }
-            print("是否有网\(hasNet)")
+        
+        TTAuthorizer.shared.checkLocationAuthorization().subscribe(onNext: {[weak self] (result,b) in guard let self = self else { return }
+            if result {
+                // 获取了权限
+                print("权限获取到了")
+            }
         }).disposed(by: rx.disposeBag)
     }
 

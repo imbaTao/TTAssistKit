@@ -1,6 +1,7 @@
 PODS:
   - "NSObject+Rx (5.2.2)":
     - RxSwift (~> 6.2)
+  - ReachabilitySwift (5.0.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -10,15 +11,41 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - TTAssistKit (1.0.2):
+  - TTAssistKit (0.1.0):
     - "NSObject+Rx (= 5.2.2)"
     - RxCocoa (= 6.5.0)
     - RxOptional (= 5.0.2)
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
-    - TTAssistKit/TTAssistCore (= 1.0.2)
-    - TTAssistKit/TTDevice (= 1.0.2)
-    - TTAssistKit/TTNetObserver (= 1.0.2)
+    - TTAssistKit/TTAssistCore (= 0.1.0)
+    - TTAssistKit/TTAuthorizer (= 0.1.0)
+    - TTAssistKit/TTDevice (= 0.1.0)
+    - TTAssistKit/TTNetObserver (= 0.1.0)
+  - TTAssistKit/TTAssistCore (0.1.0):
+    - "NSObject+Rx (= 5.2.2)"
+    - RxCocoa (= 6.5.0)
+    - RxOptional (= 5.0.2)
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - TTAssistKit/TTAuthorizer (0.1.0):
+    - "NSObject+Rx (= 5.2.2)"
+    - RxCocoa (= 6.5.0)
+    - RxOptional (= 5.0.2)
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - TTAssistKit/TTDevice (0.1.0):
+    - "NSObject+Rx (= 5.2.2)"
+    - RxCocoa (= 6.5.0)
+    - RxOptional (= 5.0.2)
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - TTAssistKit/TTNetObserver (0.1.0):
+    - "NSObject+Rx (= 5.2.2)"
+    - ReachabilitySwift
+    - RxCocoa (= 6.5.0)
+    - RxOptional (= 5.0.2)
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
 
 DEPENDENCIES:
   - TTAssistKit (from `../`)
@@ -26,6 +53,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - "NSObject+Rx"
+    - ReachabilitySwift
     - RxCocoa
     - RxOptional
     - RxRelay
@@ -37,12 +65,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   "NSObject+Rx": 61cf1f7306a73dcef8b36649198af0813ec18dfd
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  TTAssistKit: e08d942b137df0bdc50bf0a29105297a324ef683
+  TTAssistKit: 2fee0647b2263547242d0d582f45c0d5e664d619
 
-PODFILE CHECKSUM: 2e6c1a04077c2bbfc783f519aa5ba9eb1050f74a
+PODFILE CHECKSUM: 94a1cceeda5269698b80973d7642474152e7c877
 
 COCOAPODS: 1.11.3
