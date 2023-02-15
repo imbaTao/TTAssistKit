@@ -16,9 +16,42 @@ import Photos
 
 open class TTAuthorizer: NSObject {
     public static let shared = TTAuthorizer()
+    
+    public enum AuthorizeTionType {
+        case camera
+        case microPhone
+        case photoLibrary
+        case mapLocaltion
+    }
 }
 
+
+
 public extension TTAuthorizer {
+    // 连续检查权限
+    func checkAuthorization(_ types:[TTAuthorizer.AuthorizeTionType]) -> Observable<Bool> {
+        var observerbles: [Observable<Bool>] = []
+        types.forEach { type in
+            switch type {
+            case .camera:
+                observerbles.append(checkCameraAuthorization())
+            case .microPhone:
+                observerbles.append(checkMicrophoneAuthorization())
+            case .photoLibrary:
+                observerbles.append(checkPhotoLibraryAuthorization().map{$0.0})
+            case .mapLocaltion:
+                observerbles.append(checkLocationAuthorization().map{$0.0})
+            }
+        }
+        return Observable.zip(observerbles).map { boolArray in
+            boolArray.reduce(true, {$0 && $1})
+        }
+    }
+    
+    
+    
+    
+    
     /// MARK: - 检测是有摄像头权限
     func checkCameraAuthorization() -> Observable<Bool> {
         return Single<Bool>.create {(single) -> Disposable in
