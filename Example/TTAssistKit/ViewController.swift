@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
+        
 //        let testArray = [0,1,1,1,1]
 //        var b = testArray.reduce(100) { partialResult, element in
 //            return partialResult + element
@@ -27,15 +28,15 @@ class ViewController: UIViewController {
 //        }).disposed(by: rx.disposeBag)
         
         
-        TTAuthorizer.shared.checkAuthorization([.camera,.microPhone,.mapLocaltion]).subscribe(onNext: {[weak self] (result) in guard let self = self else { return }
-            if result {
-                // 获取了权限
-                print("权限获取到了")
-            }else {
-                // 获取了权限
-                print("权限没获取到")
-            }
-        }).disposed(by: rx.disposeBag)
+//        TTAuthorizer.shared.checkAuthorization([.camera,.microPhone,.mapLocaltion]).subscribe(onNext: {[weak self] (result) in guard let self = self else { return }
+//            if result {
+//                // 获取了权限
+//                print("权限获取到了")
+//            }else {
+//                // 获取了权限
+//                print("权限没获取到")
+//            }
+//        }).disposed(by: rx.disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
