@@ -60,4 +60,8 @@ Pod::Spec.new do |s|
     s.subspec 'TTAuthorizer' do |ss|
       ss.source_files = 'TTAssistKit/TTAuthorizer/**/*'
     end
+    
+    s.subspec 'TTKeyboard' do |ss|
+      ss.source_files = 'TTAssistKit/TTKeyboard/**/*'
+    end
 end
