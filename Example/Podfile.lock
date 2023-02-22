@@ -20,6 +20,7 @@ PODS:
     - TTAssistKit/TTAssistCore (= 0.1.0)
     - TTAssistKit/TTAuthorizer (= 0.1.0)
     - TTAssistKit/TTDevice (= 0.1.0)
+    - TTAssistKit/TTKeyboard (= 0.1.0)
     - TTAssistKit/TTNetObserver (= 0.1.0)
   - TTAssistKit/TTAssistCore (0.1.0):
     - "NSObject+Rx (= 5.2.2)"
@@ -34,6 +35,12 @@ PODS:
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
   - TTAssistKit/TTDevice (0.1.0):
+    - "NSObject+Rx (= 5.2.2)"
+    - RxCocoa (= 6.5.0)
+    - RxOptional (= 5.0.2)
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - TTAssistKit/TTKeyboard (0.1.0):
     - "NSObject+Rx (= 5.2.2)"
     - RxCocoa (= 6.5.0)
     - RxOptional (= 5.0.2)
@@ -70,7 +77,7 @@ SPEC CHECKSUMS:
   RxOptional: 3664964c96b69dd20c9cf78bdfe546615e26eca8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  TTAssistKit: 2fee0647b2263547242d0d582f45c0d5e664d619
+  TTAssistKit: df972e3854792855874159ff79bfb94572a53d51
 
 PODFILE CHECKSUM: 94a1cceeda5269698b80973d7642474152e7c877
 
