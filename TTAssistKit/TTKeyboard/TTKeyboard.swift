@@ -35,9 +35,9 @@ open class TTKeyboard: NSObject {
             [weak self] notification in
             guard let self = self else { return }
             // 显示键盘
-            if let endBounce = notification.userInfo?["UIKeyboardFrameEndUserKey"] as? CGRect,
+            if let endBounce = notification.userInfo?["UIKeyboardFrameEndUserInfoKey"] as? CGRect,
                 endBounce.height > 100,
-                let beginBounce = notification.userInfo?["UIKeyboardFrameBeginUserKey"]
+                let beginBounce = notification.userInfo?["UIKeyboardFrameBeginUserInfoKey"]
                     as? CGRect
             {
 
