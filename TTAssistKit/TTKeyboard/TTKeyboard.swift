@@ -61,16 +61,16 @@ open class TTKeyboard: NSObject {
 
                     self.keyboardChangingHeight.accept(0)
                 }
-                //                debugPrint("键盘的end\(endBounce)  begin\(beginBounce)")
+                //   debugPrint("键盘的end\(endBounce)  begin\(beginBounce)")
             }
 
         }).disposed(by: rx.disposeBag)
     }
 
    private func fetchRealKeyboardHeight() -> CGFloat {
-        let keyboardWindow = UIApplication.shared.windows.last
+        let keyboardWindow = UIApplication.shared.keyWindow
         let inputView = keyboardWindow?.rootViewController?.view.tkp_findSubview(
-            "UIInputSetHostView")
+            "UIInputSetHostView",resursion: true)
         if let inputView = inputView {
             return inputView.bounds.height
         }
