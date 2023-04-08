@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+import RxRelay
+import RxSwift
+import RxCocoa
+import NSObject_Rx
 
 open class TTDevice: NSObject {
     public static let shared = TTDevice()
